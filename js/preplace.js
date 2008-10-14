@@ -1,6 +1,16 @@
+jQuery.extend({
+
+  unpre : function(str) {
+      str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\\n/, "\n");
+  },
+
+  preplace : function(el) {
+    $(el).replaceWith(unpre($(el).html()));
+  }
+});
+
 $(window).load(function() {
-  jQuery.each($("pre.replace"), function() {
-    var content = $(this).html().replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\\n/, "\n");
-    $(this).replaceWith(content);
-  });
+    jQuery.each($("pre.replace"), function() {
+        JQuery.preplace(this);
+    });
 });
