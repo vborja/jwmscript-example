@@ -1,28 +1,21 @@
-<html>
-  <head>
-    <title>BeanShell scripting example</title>
-    <script type="text/javascript" src="http://github.com/vic/jwmscript/tree/master/core/src/main/resources/com/jwmsolutions/jwmscript/applet.js?raw=true"></script>
-    <script type="text/javascript">
-      JWMScript({
-        archive: "http://github.com/vborja/jwmscript-example/tree/master/signed/jwmscript-core-0.0.1.jar?raw=true",
-        types  : ["text/java", "text/beanshell"],
-        setup  : function(scripting) {
-          scripting.addClassPath("http://github.com/vborja/jwmscript-example/tree/master/signed/bsh-2.0b4.jar?raw=true");
-          var interpreter = scripting.wrapClass("bsh.Interpreter").newInstance();
-          interpreter.set("jwmscript", scripting.getHandle());
-          alert("Setup "+interpreter);
-          return function(script) { interpreter.eval(script.innerHTML); };
-        }
-      });
-    </script>
-    <script type="text/beanshell">
-      jwmscript.alert( "Hello from BeanShell" );
-    </script>
-  </head>
-  <body>
-    <h1>Hello World example scripted with BeanShell</h1>
-    <p>
-      <a href="http://beanshell.org">BeanShell</a> is an scripting language.
-    </p>
-  </body>
-</html>
+<script type="text/javascript" src="http://github.com/vic/jwmscript/tree/master/core/src/main/resources/com/jwmsolutions/jwmscript/applet.js?raw=true"></script>
+<script type="text/javascript">
+JWMScript({
+  archive: "http://github.com/vborja/jwmscript-example/tree/master/signed/jwmscript-core-0.0.1.jar?raw=true",
+  types  : ["text/java", "text/beanshell"],
+  setup  : function(scripting) {
+     scripting.addClassPath("http://github.com/vborja/jwmscript-example/tree/master/signed/bsh-2.0b4.jar?raw=true");
+     var interpreter = scripting.wrapClass("bsh.Interpreter").newInstance();
+     interpreter.set("jwmscript", scripting.getHandle());
+     alert("Setup "+interpreter);
+     return function(script) { interpreter.eval(script.innerHTML); };
+  }
+});
+</script>
+<script type="text/beanshell">
+  jwmscript.alert( "Hello from BeanShell" );
+</script>
+<h1>Hello World example scripted with BeanShell</h1>
+<p>
+  <a href="http://beanshell.org">BeanShell</a> is an scripting language.
+</p>
