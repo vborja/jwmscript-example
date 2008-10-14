@@ -9,7 +9,6 @@ jQuery.extend({
 
   preplace : function(el) {
       var code = jQuery.unpre($(el).html());
-      alert(code);
       return $(el).replaceWith(code);
   }
 
