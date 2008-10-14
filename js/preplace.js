@@ -5,7 +5,7 @@ jQuery.extend({
   },
 
   preplace : function(el) {
-    $(el).replaceWith(unpre($(el).html()));
+    $(el).replaceWith(jQuery.unpre($(el).html()));
   }
 });
 
