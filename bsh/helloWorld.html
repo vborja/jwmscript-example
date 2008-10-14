@@ -4,11 +4,10 @@
     <script type="text/javascript" src="applet.js"></script>
     <script>
       JWMScript({
-        archive: "signed/jwmscript-core-0.0.1.jar",
+        archive: "http://github.com/vborja/jwmscript-example/tree/master/signed/jwmscript-core-0.0.1.jar?raw=true",
         types  : ["text/java", "text/beanshell"],
         setup  : function(scripting) {
-          //scripting.addClassPath("http://repo1.maven.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar");
-          scripting.addClassPath("file:/home/vic/tmp/bsh-2.0b4.jar");
+          scripting.addClassPath("http://github.com/vborja/jwmscript-example/tree/master/signed/bsh-2.0b4.jar?raw=true");
           var interpreter = scripting.wrapClass("bsh.Interpreter").newInstance();
           interpreter.set("jwmscript", scripting.getHandle());
           return function(script) { interpreter.eval(script.innerHTML); };
