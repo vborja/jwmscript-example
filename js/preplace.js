@@ -5,7 +5,9 @@ jQuery.extend({
   },
 
   preplace : function(el) {
-      return $(el).replaceWith(jQuery.unpre($(el).html()));
+      var code = jQuery.unpre($(el).html());
+      alert(code);
+      return $(el).replaceWith(code);
   }
 
 });
