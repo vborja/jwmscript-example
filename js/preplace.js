@@ -5,12 +5,13 @@ jQuery.extend({
   },
 
   preplace : function(el) {
-    $(el).replaceWith(jQuery.unpre($(el).html()));
+      return $(el).replaceWith(jQuery.unpre($(el).html()));
   }
+
 });
 
 $(window).load(function() {
     jQuery.each($("pre.replace"), function() {
-        jQuery.preplace($(this));
+        jQuery.preplace(this);
     });
 });
