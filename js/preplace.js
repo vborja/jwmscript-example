@@ -1,7 +1,7 @@
 jQuery.extend({
 
   unpre : function(str) {
-      str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\\n/, "\n");
+      return str.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/\\n/, "\n");
   },
 
   preplace : function(el) {
@@ -11,6 +11,6 @@ jQuery.extend({
 
 $(window).load(function() {
     jQuery.each($("pre.replace"), function() {
-        jQuery.preplace(this);
+        jQuery.preplace($(this));
     });
 });
