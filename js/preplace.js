@@ -11,6 +11,6 @@ jQuery.extend({
 
 $(window).load(function() {
     jQuery.each($("pre.replace"), function() {
-        JQuery.preplace(this);
+        jQuery.preplace(this);
     });
 });
